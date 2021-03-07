@@ -1,0 +1,17 @@
+com/example/group2_sqlite/StudentAdapter.java
+ com.example.group2_sqlite.StudentAdapter
+ com.example.group2_sqlite.StudentAdapter$1
+ com.example.group2_sqlite.StudentAdapter$2
+ com.example.group2_sqlite.StudentAdapter$ViewHolder
+com/example/group2_sqlite/DataBaseHelper.java
+ com.example.group2_sqlite.DataBaseHelper
+com/example/group2_sqlite/StudentClass.java
+ com.example.group2_sqlite.StudentClass
+com/example/group2_sqlite/ViewStudent.java
+ com.example.group2_sqlite.ViewStudent
+com/example/group2_sqlite/BuildConfig.java
+ com.example.group2_sqlite.BuildConfig
+com/example/group2_sqlite/MainActivity.java
+ com.example.group2_sqlite.MainActivity
+ com.example.group2_sqlite.MainActivity$1
+ com.example.group2_sqlite.MainActivity$2
