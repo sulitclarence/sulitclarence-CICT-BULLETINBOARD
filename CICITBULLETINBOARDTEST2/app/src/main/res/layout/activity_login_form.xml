@@ -50,33 +50,22 @@
         android:textSize="16dp"
         android:inputType="textPersonName" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+    <EditText
+        android:id="@+id/txtPass"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginRight="0dp"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="#620099">
+        android:layout_height="50dp"
+        android:layout_marginTop="360dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_login"
+        android:drawableStart="@drawable/custom_password_icon"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPass"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="360dp"
-            android:layout_marginRight="40dp"
-            android:background="@drawable/custom_login"
-            android:drawableStart="@drawable/custom_password_icon"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:textSize="16dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
+        android:hint="Password"
+        android:textSize="16dp" />
 
 
     <Spinner

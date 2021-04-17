@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class UsersViewForDetails extends AppCompatActivity {
 
-    TextView tvtitle, tvdescription, tvdate, tvid;
+    TextView tvtitle, tvdescription, tvdate, tvid, tvtime;
     int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class UsersViewForDetails extends AppCompatActivity {
         tvtitle = findViewById(R.id.title_details);
         tvdescription = findViewById(R.id.description_details);
         tvdate = findViewById(R.id.date_details);
+        tvtime = findViewById(R.id.time_details);
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
@@ -27,5 +28,6 @@ public class UsersViewForDetails extends AppCompatActivity {
         tvtitle.setText(UsersView.adminDataArrayList.get(position).getTitle());
         tvdescription.setText(UsersView.adminDataArrayList.get(position).getDescription());
         tvdate.setText(UsersView.adminDataArrayList.get(position).getDate());
+        tvtime.setText(UsersView.adminDataArrayList.get(position).getTime());
     }
 }

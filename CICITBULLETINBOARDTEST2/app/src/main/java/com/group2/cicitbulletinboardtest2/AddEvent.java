@@ -100,7 +100,7 @@ public class AddEvent extends AppCompatActivity {
 
 
 
-        date_text.setText(new SimpleDateFormat("MM-dd-YYYY").format(calendar.getTime()));
+        date_text.setText(new SimpleDateFormat("YYYY-MM-dd").format(calendar.getTime()));
         SimpleDateFormat format1 = new SimpleDateFormat("hh:mm aa");
         String time2 = format1.format(c1.getTime());
         timer_text.setText(time2);
@@ -258,7 +258,7 @@ public class AddEvent extends AppCompatActivity {
 
 
                 calendar = new GregorianCalendar(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
-                date_text.setText(new SimpleDateFormat("MM-dd-YYYY").format(calendar.getTime()));
+                date_text.setText(new SimpleDateFormat("YYYY-MM-dd").format(calendar.getTime()));
             }
         });
         builder.show();
