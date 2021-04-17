@@ -10,23 +10,23 @@
     tools:context=".AdminDetails"
     android:background="@drawable/backgroundviolet">
 
+
     <TextView
         android:id="@+id/id_details"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/color"
-        android:hint="ID:"
         android:gravity="center_vertical|center"
+
+        android:hint="ID:"
         android:inputType="textMultiLine"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
 
-        android:textSize="20dp"
         android:textColor="#FFFFFF"
+        android:textSize="20dp"
         android:textStyle="bold|italic" />
-
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             android:textSize="40dp"
             android:text="TITLE\n"
             android:textAlignment="center"
@@ -46,8 +46,8 @@
 
         <TextView
             android:id="@+id/title_details"
-            android:layout_width="390dp"
-            android:layout_height="89dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignBottom="@id/textView2"
             android:layout_marginBottom="4dp"
             android:ellipsize="end"
@@ -61,8 +61,9 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/custom_title"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
 
         <TextView
@@ -77,15 +78,17 @@
         <TextView
             android:id="@+id/description_details"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_alignBottom="@id/textView3"
-            android:layout_marginBottom="-58dp"
+            android:layout_marginBottom="4dp"
             android:ellipsize="end"
             android:inputType="textMultiLine"
             android:paddingStart="3dp"
             android:paddingEnd="3dp"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -98,12 +101,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="40dp"
-            android:text="Due Date\n"
+            android:text="Date and Time\n"
             android:textAlignment="center"
             android:textStyle="bold"/>
+
         <TextView
             android:id="@+id/date_details"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/textView4"
             android:paddingStart="3dp"
@@ -113,8 +117,34 @@
             android:textAlignment="center"
             android:textSize="20dp"
            />
+        <TextView
+            android:id="@+id/time_details"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/textView4"
+            android:paddingStart="3dp"
+            android:layout_marginLeft="225dp"
+            android:layout_marginBottom="10dp"
+            android:paddingEnd="3dp"
+            android:inputType="textMultiLine"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            />
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
 
+        <ImageView
+            android:id="@+id/admin_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </RelativeLayout>
 
 
 

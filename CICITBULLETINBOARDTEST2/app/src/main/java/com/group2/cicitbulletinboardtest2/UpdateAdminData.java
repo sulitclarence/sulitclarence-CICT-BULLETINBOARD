@@ -1,6 +1,7 @@
 package com.group2.cicitbulletinboardtest2;
 
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,10 +30,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class UpdateAdminData extends AppCompatActivity {
-    EditText update_title, update_description, update_id;
-    TextView update_date_text;
+    EditText update_title, update_description;
+    TextView update_date_text, update_id, update_timer;
     Calendar update_calendar;
     TextView update_toolbar_title;
     Button update_btn;
@@ -42,6 +45,7 @@ public class UpdateAdminData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_admin_data);
 
+        Calendar c1 = Calendar.getInstance();
         update_calendar = new GregorianCalendar();
         update_title = findViewById(R.id.update_title);
         update_toolbar_title = findViewById(R.id.update_toolbar_title);
@@ -49,8 +53,12 @@ public class UpdateAdminData extends AppCompatActivity {
         update_date_text = findViewById(R.id.update_date_text);
         update_btn = findViewById(R.id.update_btn);
         update_id = findViewById(R.id.update_id);
+        update_timer = findViewById(R.id.update_timer);
 
         update_date_text.setText(new SimpleDateFormat("YYYY-MM-dd").format(update_calendar.getTime()));
+        SimpleDateFormat format1 = new SimpleDateFormat("k:mm a");
+        String time2 = format1.format(c1.getTime());
+        update_timer.setText(time2);
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
@@ -59,7 +67,6 @@ public class UpdateAdminData extends AppCompatActivity {
         update_id.setText(MainActivity.adminDataArrayList.get(position).getId());
         update_title.setText(MainActivity.adminDataArrayList.get(position).getTitle());
         update_description.setText(MainActivity.adminDataArrayList.get(position).getDescription());
-        update_date_text.setText(new SimpleDateFormat("YYYY-MM-dd").format(update_calendar.getTime()));
 
     }
 
@@ -68,6 +75,7 @@ public class UpdateAdminData extends AppCompatActivity {
         String title = update_title.getText().toString();
         String description = update_description.getText().toString();
         String date = update_date_text.getText().toString();
+        String time = update_timer.getText().toString();
 
 
         StringRequest request = new StringRequest(Request.Method.POST, "https://cictbulletinboard.000webhostapp.com/update.php",
@@ -94,6 +102,7 @@ public class UpdateAdminData extends AppCompatActivity {
                 params.put("title",title);
                 params.put("description",description);
                 params.put("date",date);
+                params.put("time",time);
                 return params;
             }
         };
@@ -121,4 +130,25 @@ public class UpdateAdminData extends AppCompatActivity {
         });
         builder.show();
     }
+    public void chooseTimer1(View view) {
+        Calendar calendar1 = Calendar.getInstance();
+        int hours = calendar1.get(Calendar.HOUR_OF_DAY);
+        int mins = calendar1.get(Calendar.MINUTE);
+        TimePickerDialog timePickerDialog = new TimePickerDialog(UpdateAdminData.this, R.style.Theme_AppCompat_Dialog, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hoursOfday, int minute) {
+                Calendar c = Calendar.getInstance();
+                c.set(Calendar.HOUR_OF_DAY, hoursOfday);
+                c.set(Calendar.MINUTE, minute);
+                c.setTimeZone(TimeZone.getDefault());
+                SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss");
+                String time1 = format.format(c.getTime());
+                update_timer.setText(time1);
+            }
+
+        }, hours, mins,true);
+        timePickerDialog.show();
+
+    }
+
 }

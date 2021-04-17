@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AdminDetails extends AppCompatActivity {
-        TextView tvid, tvtitle, tvdescription, tvdate;
+        TextView tvid, tvtitle, tvdescription, tvdate, tvtime;
+        ImageView tvimage;
         int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,7 @@ public class AdminDetails extends AppCompatActivity {
         tvtitle = findViewById(R.id.title_details);
         tvdescription = findViewById(R.id.description_details);
         tvdate = findViewById(R.id.date_details);
+        tvtime = findViewById(R.id.time_details);
 
         Intent intent = getIntent();
         position = intent.getExtras().getInt("position");
@@ -26,5 +29,7 @@ public class AdminDetails extends AppCompatActivity {
         tvtitle.setText(MainActivity.adminDataArrayList.get(position).getTitle());
         tvdescription.setText(MainActivity.adminDataArrayList.get(position).getDescription());
         tvdate.setText(MainActivity.adminDataArrayList.get(position).getDate());
+        tvtime.setText(MainActivity.adminDataArrayList.get(position).getTime());
+
     }
 }

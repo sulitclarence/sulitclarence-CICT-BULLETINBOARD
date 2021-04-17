@@ -1,16 +1,16 @@
 package com.group2.cicitbulletinboardtest2;
 
 public class AdminData {
-       private String id, title, description, date;
+       private String id, title, description, date, time, image;
 
-    public AdminData() {
-    }
 
-    public AdminData(String id, String title, String description, String date) {
+    public AdminData(String id, String title, String description, String date, String time, String image) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.date = date;
+        this.time = time;
+        this.image = image;
     }
 
     public String getId() {
@@ -43,5 +43,21 @@ public class AdminData {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

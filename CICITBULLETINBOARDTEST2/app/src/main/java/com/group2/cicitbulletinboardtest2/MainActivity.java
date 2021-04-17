@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                             case 1:
                                 startActivity(new Intent(getApplicationContext(),UpdateAdminData.class)
                                 .putExtra("position",position));
-                                finish();
                             break;
                             case 2:
                                 deleteData(adminDataArrayList.get(position).getId());
@@ -135,11 +134,14 @@ public class MainActivity extends AppCompatActivity {
                                         String title = object.getString("title");
                                         String description = object.getString("description");
                                         String date = object.getString("date");
+                                        String time = object.getString("time");
+                                        String image = object.getString("image");
 
-                                        adminData = new AdminData(id, title, description, date);
+                                        String url = "https://cictbulletinboard.000webhostapp.com/Images/"+image;
+
+                                        adminData = new AdminData(id, title, description, date, time, url);
                                         adminDataArrayList.add(adminData);
                                         adapter.notifyDataSetChanged();
-
 
                                     }
                                 }
@@ -155,7 +157,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void openAddEvent(View view)
+
             {
                 startActivity(new Intent(this, AddEvent.class));
             }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(MainActivity.this, LoginForm.class);
+        startActivity(intent);
+    }
 }

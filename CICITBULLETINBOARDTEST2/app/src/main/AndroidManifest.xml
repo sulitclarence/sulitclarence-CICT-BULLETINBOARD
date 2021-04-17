@@ -4,6 +4,7 @@
     package="com.group2.cicitbulletinboardtest2">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/CustomTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".UpdateAdminData"></activity>
+        <activity android:name=".AddEvent" />
+        <activity android:name=".UpdateAdminData" />
         <activity android:name=".UsersViewForDetails" />
         <activity android:name=".UsersView" />
         <activity android:name=".AdminDetails" />
@@ -22,10 +24,17 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddEvent" />
     </application>
 
 </manifest>

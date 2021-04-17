@@ -84,8 +84,10 @@ public class UsersView extends AppCompatActivity {
                                 String title = object.getString("title");
                                 String description = object.getString("description");
                                 String date = object.getString("date");
+                                String time = object.getString("time");
+                                String image = object.getString("image");
 
-                                adminData = new AdminData(id, title, description, date);
+                                adminData = new AdminData(id, title, description, date, time, image);
                                 adminDataArrayList.add(adminData);
                                 adapter.notifyDataSetChanged();
 
