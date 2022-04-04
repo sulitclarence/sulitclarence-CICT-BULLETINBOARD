@@ -1,1 +1,1 @@
-# sulitclarence-CC107_Sat7301230Group2
+# sulitclarence-CICT-BULLETINBOARD
